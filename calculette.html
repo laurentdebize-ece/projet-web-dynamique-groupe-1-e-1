@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculatrice</title>
+	<style>
+		body {
+			margin: 30px;
+			text-align: center;
+		}
+		input[type="button"] {
+			background-color: #4CAF50;
+			border: none;
+			color: white;
+			padding: 10px 24px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 5px;
+		}
+		input[type="text"] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 2px 2px 5px #999;
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+		h1 {
+			font-size: 36px;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Calculette</h1>
+	<form>
+		<input type="text" id="resultat" readonly><br><br>
+		<input type="button" value="7" onclick="ajouter('7')">
+		<input type="button" value="8" onclick="ajouter('8')">
+		<input type="button" value="9" onclick="ajouter('9')">
+		<input type="button" value="/" onclick="ajouter('/')"><br><br>
+		<input type="button" value="4" onclick="ajouter('4')">
+		<input type="button" value="5" onclick="ajouter('5')">
+		<input type="button" value="6" onclick="ajouter('6')">
+		<input type="button" value="*" onclick="ajouter('*')"><br><br>
+		<input type="button" value="1" onclick="ajouter('1')">
+		<input type="button" value="2" onclick="ajouter('2')">
+		<input type="button" value="3" onclick="ajouter('3')">
+		<input type="button" value="-" onclick="ajouter('-')"><br><br>
+		<input type="button" value="0" onclick="ajouter('0')">
+		<input type="button" value="." onclick="ajouter('.')">
+		<input type="button" value="=" onclick="calculer()">
+		<input type="button" value="+" onclick="ajouter('+')"><br><br>
+		<input type="button" value="C" onclick="effacer()">
+	</form>
+	<script type="text/javascript" src="calculette.js"></script>
+</body>
+</html>
