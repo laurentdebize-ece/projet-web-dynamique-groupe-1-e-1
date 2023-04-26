@@ -18,7 +18,7 @@
 		}
 		#section {
 			background-color:#BFEE90;
-			width: auto
+			width: auto;
 			float: right;
 			height: 500px;
 			font-size: 1.2em;
@@ -27,7 +27,7 @@
 		#footer { 
 			color : black;
 			background-color: #BFEE90; 
-			width: auto
+			width: auto;
 			float: right;
 			text-align: center; 
 			height: 50px;
