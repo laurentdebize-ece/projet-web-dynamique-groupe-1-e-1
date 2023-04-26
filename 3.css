@@ -22,7 +22,6 @@
 			float: right;
 			height: 500px;
 			font-size: 1.2em;
-
 		} 
 		#footer { 
 			color : black;
@@ -35,5 +34,5 @@
 		#img{
 			margin: 30px;
 			float: left;
-			width: auto
+			width: auto;
 		}
