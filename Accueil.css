@@ -1,33 +1,31 @@
-		#fond{
-			background-color: #E6E6FA;
+		#general{
+			font-family: Helvetica, Arial, sans-serif;
+			text-align: justify;
 		}
 		#header {
-			background-color: #E6E6FA;
-			text-align: center;
-			color: #e8b9e8;			
+			text-align: center;		
 			width: auto;
 			height : 100px;
 			font-size: 1.5em;
+			color : #1c343c;
 		}
 		#nav {
-			color : blue;
-			line-height: 30px;
-			background-color:#e8b9e8;
-			height: 650px;
-			width: 150px;
+			color : #76b5c5;
+			line-height: 40px;
+			background-color:#1c343c;
+			height: 700px;
+			width: 200px;
 			float: left;
-			text-indent: 10px;
-			font-size: 1.5em;
+			text-indent: 15px;
+			font-size: 1.3em;
 		}
 		#section {
-			background-color:#BFEE90;
 			width: auto;
-			height: 500px;
+			height: 550px;
 			font-size: 1.2em;
 		} 
 		#footer { 
 			color : black;
-			background-color: #BFEE90; 
 			width: auto;
 			text-align: center; 
 			height: 50px;
