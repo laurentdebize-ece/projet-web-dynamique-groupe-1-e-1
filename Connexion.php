@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html id="general">
 <head>
-	<link rel="stylesheet" type="text/css" href="/Applications/MAMP/htdocs/ProjetWebDynamique /projet-web-dynamique-groupe-1-e-1/CSS/Connexion.css">
+	<link rel="stylesheet" type="text/css" href="Connexion.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Connexion</title>
@@ -16,16 +16,11 @@
 			<legend>Connexion</legend><br>
 			Email : <br><input type="text" name="email"> <br><br>
 			Mot de passe :<br><input type="password" name="pass" id="pass"><br><br>
-			<a href="Accueil.html">Envoyer</a><br><br><br><br>
+			<a href="Accueil.php">Envoyer</a><br><br><br><br>
 			</a>
 		</fieldset>
 		</div>
 	</div>
-	<div id="footer">
-		Droit d'auteur &copy; 2023 Omnes MySkills<br>
-		Dernière mise à jour le 08/05/2023 | 
-		<a href=mailto:scolarite.lyon@ece.fr>scolarite.lyon@ece.fr</a>
-	
-	</div>
+	<?php include("footer.php"); ?>
 </body>
 </html>
