@@ -9,10 +9,11 @@
 			font-size: 1.5em;
 			color : #1c343c;
 		}
-		.deconnexion{
-			position: absolute;
-			bottom: 0;
-			color : white;
+		.accueil{
+			color : red
+		}
+		.intro{
+			text-align: center;
 		}
 		#nav {
 			color : #76b5c5;

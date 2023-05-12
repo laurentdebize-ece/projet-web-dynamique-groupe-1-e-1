@@ -4,6 +4,19 @@
 	<link rel="stylesheet" type="text/css" href="Connexion.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<?php
+
+	$conn = new mysqli('localhost', 'root', 'root', 'Omnes MySkills');
+
+	$sql = "SELECT * FROM Etudiants";
+	$result = $conn->query($sql);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "ID: " . $row["IdEtudiant"] . " - Prénom: " . $row["Prenom"] . " - Nom: " . $row["Nom"] . " - mail: " . $row["Mail"] . " - Numéro de classe: " . $row["IdClasse"] . "<br>" ;
+    }
+
+	$conn->close();
+	?>
 	<title>Connexion</title>
 </head>
 <body>
@@ -16,7 +29,7 @@
 			<legend>Connexion</legend><br>
 			Email : <br><input type="text" name="email"> <br><br>
 			Mot de passe :<br><input type="password" name="pass" id="pass"><br><br>
-			<a href="Accueil.html">Envoyer</a><br><br><br><br>
+			<a href="Accueil.php">Envoyer</a><br><br><br><br>
 			</a>
 		</fieldset>
 		</div>
