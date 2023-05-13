@@ -28,7 +28,7 @@
 		<div><a href ="Connexion.php">Deconnexion</a></div>
 	</div>
 	<div id="header">
-		<img src="/Applications/MAMP/htdocs/projet-web-dynamique-groupe-1-e-1/images/ece.png" height="100" id="img">
+		<img src="ece.png" height="100" id="img">
 		<h1>Omnes MySkills</h1>
 	</div>
 	<div class="intro"> Vous êtes sur la page d'Accueil ! </div>
