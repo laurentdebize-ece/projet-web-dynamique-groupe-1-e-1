@@ -16,11 +16,12 @@
 		<div class ="connexion">
 			<fieldset>
 			<legend>Connexion</legend><br>
-			Email : <br><input type="text" name="email"> <br><br>
-			Mot de passe :<br><input type="password" name="pass" id="pass"><br><br>
-			<a href="Accueil.php">Envoyer</a><br><br><br><br>
-			</a>
-		</fieldset>
+			<form action="login.php" method="post">
+				Email : <br><input type="text" name="email"> <br><br>
+				Mot de passe :<br><input type="password" name="pass" id="pass"><br><br>
+				<input type="submit" name="submit" value="Envoyer"><br><br><br><br>
+			</form>
+			</fieldset>
 		</div>
 	</div>
 	<?php include("footer.php"); ?>

@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])) {
+    header('Location: Connexion.php');
+}
+?>
+
 <!DOCTYPE html>
 <html id="general">
 <head>
