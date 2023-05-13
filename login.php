@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["id_etudiant"] = $row["IdEtudiant"];
 
         // Rediriger l'utilisateur vers la page d'accueil des étudiants
-        header("Location: Accueil_etudiant.php");
+        header("Location: Accueil.php");
         exit();
     }
 
