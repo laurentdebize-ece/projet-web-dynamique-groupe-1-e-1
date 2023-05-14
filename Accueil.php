@@ -1,44 +1,26 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['id'])) {
+    header('Location: Connexion.php');
+}
+?>
+
 <!DOCTYPE html>
 <html id="general">
 <head>
 	<link rel="stylesheet" type="text/css" href="Accueil.css">
+	<link rel="stylesheet" type="text/css" href="footer.css">
+	<link rel="stylesheet" type="text/css" href="menu.css">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php
-
-	$conn = new mysqli('localhost', 'root', 'root', 'Omnes MySkills');
-
-	$sql = "SELECT * FROM Etudiants";
-	$result = $conn->query($sql);
-
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "ID: " . $row["IdEtudiant"] . " - Prénom: " . $row["Prenom"] . " - Nom: " . $row["Nom"] . " - mail: " . $row["Mail"] . " - Numéro de classe: " . $row["IdClasse"] . "<br>" ;
-    }
-
-	$conn->close();
-	?>
 	<title> Accueil </title>
 </head>
 <body>
-	<div id="nav">
-		<div class="accueil"><a href ="Accueil.php">Accueil</a></div>
-		<div><a href = "Matières.php">Matières</a></div>
-		<div><a href ="MesCompétences.php">Mes compétences</a></div>
-		<div> <a href ="MonCompte.php">Mon compte</a></div>
-		<div><a href ="Connexion.php">Deconnexion</a></div>
-	</div>
-	<div id="header">
-		<img src="ece.png" height="100" id="img">
-		<h1>Omnes MySkills</h1>
-	</div>
-	<div class="intro"> Vous êtes sur la page d'Accueil ! </div>
-	<div id="section">
-	</div>
-	<div id="footer">
-		Droit d'auteur &copy; 2023 Omnes MySkills<br>
-		Dernière mise à jour le 08/05/2023 | 
-		<a href=mailto:scolarite.lyon@ece.fr>scolarite.lyon@ece.fr</a>
-	</div>
-
+	<?php include("menu.php"); ?>
+	<div>
+		<h2> Bienvenue sur Omnes MySkills !</h2>
+		<p id ="intro"> Omnes MySkills est la plateforme en ligne officielle de l'ECE qui regroupe les élèves, les professeurs et les admins. Sur ce site, vous pourrez consulter vos matières et compétences à travers les différents onglets. Amusez-vous bien ! <p>
+	<?php include("footer.php"); ?>
 </body>
 </html>
