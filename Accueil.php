@@ -16,7 +16,7 @@
 			$conn = new mysqli('localhost', 'root', 'root', 'Omnes MySkills');
 			$typeUtilisateur = $_SESSION["typeUtilisateur"];
 
-			if (isset($_SESSION['id_etudiant']) && $typeUtilisateur == "etudiant") {
+			if (isset($_SESSION['id_etudiant']) && $typeUtilisateur == "étudiant") {
 				$id_etudiant = $_SESSION['id_etudiant'];
 
 				$query = "SELECT * FROM Etudiants WHERE IdEtudiant='$id_etudiant'";

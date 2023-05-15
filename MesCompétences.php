@@ -10,6 +10,16 @@
 </head>
 <body>
 	<?php include("menu.php"); ?>	
+	<div id= "section">
+		hadbzazdjbjhvjgvkhgvgcjhfccjfjbkjhvkjblahjzdbd
+		<?php
+				session_start();
+				$conn = new mysqli('localhost', 'root', 'root', 'Omnes MySkills');
+				$typeUtilisateur = $_SESSION["typeUtilisateur"];
+				
+				echo "bonjour $typeUtilisateur";
+		?>
+	</div>
 	<?php include("footer.php"); ?>
 </body>
 </html>
