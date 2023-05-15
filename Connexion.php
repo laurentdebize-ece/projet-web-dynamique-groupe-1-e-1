@@ -17,8 +17,8 @@
 			<fieldset>
 			<legend>Connexion</legend><br>
 			<form action="login.php" method="post">
-				Email : <br><input type="text" name="email"> <br><br>
-				Mot de passe :<br><input type="password" name="pass" id="pass"><br><br>
+				Email : <br><input type="text" name="email" maxlenght=30 size=35> <br><br>
+				Mot de passe :<br><input type="password" name="pass" id="pass" maxlenght=30 size=35><br><br>
 				<input type="submit" name="submit" value="Envoyer"><br><br><br><br>
 			</form>
 			</fieldset>
