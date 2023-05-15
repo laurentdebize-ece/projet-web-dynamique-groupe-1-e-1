@@ -35,7 +35,7 @@
     let translateValue = 0;
    
     function showImage(index) {
-      translateValue = -index * 100;
+      translateValue = -index * 50;
       slider.style.transform = `translateX(${translateValue}%)`;
     }
    
