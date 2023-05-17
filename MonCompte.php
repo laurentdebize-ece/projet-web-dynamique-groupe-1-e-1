@@ -11,10 +11,14 @@
 <body>
 	<?php include("menu.php"); ?>
      <div class="info">
-        <label>Nom :</label> <br>
-		<label>Prénom :</label> <br>
-		<label>Mail :</label> <br>
-		<label>Mot de passe :</label> <br>
+        <?php
+			session_start();
+			$typeUtilisateur = $_SESSION["typeUtilisateur"];
+        ?>
+        <label> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </label> <br> <br>
+        <label>Nom : <?php echo $_SESSION["nom"]; ?></label> <br>
+		<label>Prénom : <?php echo $_SESSION["prenom"]; ?></label> <br>
+		<label>Mail : <?php echo $_SESSION["mail"]; ?></label> <br>
     </div>
     <?php include("footer.php"); ?>
 </body>
