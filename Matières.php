@@ -30,11 +30,11 @@
     const sliderButtons = document.querySelectorAll('.slider-button');
     let translateValue = 0;
    
-    function showImage(index) {
+    function showImage(index){
       translateValue = -index * 50;
       slider.style.transform = `translateX(${translateValue}%)`;
     }
-   
+
     sliderButtons.forEach((button, index) => {
       button.addEventListener('click', () => {
         showImage(index);
