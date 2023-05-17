@@ -5,6 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
     $password = $_POST["pass"];
 
+    // Vérifier si l'utilisateur est un étudiant
     $conn = new mysqli('localhost', 'root', 'root', 'Omnes MySkills');
     $query = "SELECT * FROM Etudiants WHERE Mail='$email' AND MotDePasse='$password'";
     $result = $conn->query($query);
