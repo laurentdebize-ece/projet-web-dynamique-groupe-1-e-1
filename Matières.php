@@ -9,7 +9,6 @@
 	<title> Matières </title>
 
 	<script>
-    // JavaScript pour le slider
     const slider = document.querySelector('.slider');
     const sliderButtons = document.querySelectorAll('.slider-button');
     let translateValue = 0;
@@ -28,7 +27,6 @@
 </head>
 <body>
 	<?php include("menu.php"); ?>
-	<!-- Slider -->
 	<div class="slider-container">
     <div class="slider">
       <img src="Informatique web.png" alt="Image 1">
