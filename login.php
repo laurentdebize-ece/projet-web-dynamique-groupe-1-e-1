@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // L'utilisateur est un étudiant, enregistrer l'identifiant de l'utilisateur dans la session
         $row = $result->fetch_assoc();
         $_SESSION["id_etudiant"] = $row["IdEtudiant"];
-
+    
         // Rediriger l'utilisateur vers la page d'accueil des étudiants
         header("Location: Accueil.php");
         exit();

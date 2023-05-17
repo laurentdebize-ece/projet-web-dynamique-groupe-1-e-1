@@ -1,11 +1,3 @@
-<?php
-session_start();
-
-if(!isset($_SESSION['id'])) {
-    header('Location: Connexion.php');
-}
-?>
-
 <!DOCTYPE html>
 <html id="general">
 <head>
@@ -18,7 +10,6 @@ if(!isset($_SESSION['id'])) {
 </head>
 <body>
 	<?php include("menu.php"); ?>
-	<div>
 		<h2> Bienvenue sur Omnes MySkills !</h2>
 		<p id ="intro"> Omnes MySkills est la plateforme en ligne officielle de l'ECE qui regroupe les élèves, les professeurs et les admins. Sur ce site, vous pourrez consulter vos matières et compétences à travers les différents onglets. Amusez-vous bien ! <p>
 	<?php include("footer.php"); ?>
