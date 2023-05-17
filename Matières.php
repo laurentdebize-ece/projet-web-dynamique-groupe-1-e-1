@@ -11,12 +11,12 @@
 <body>
 	<?php include("menu.php"); ?>
 	<?php include("footer.php"); ?>
-    <!-- Slider -->
-    <div class="slider-container">
+
+  <div class="slider-container">
     <div class="slider">
-      <img src="Informatique web.png" alt="Image 1">
-      <img src="Physique web.jpg" alt="Image 2">
-      <img src="Mathématiques web.jpg" alt="Image 3">
+      <img src="Informatique.jpg" alt="Image 1">
+      <img src="Physique.jpg" alt="Image 2">
+      <img src="Mathématiques.jpg" alt="Image 3">
     </div>
     <div class="slider-buttons">
       <button class="slider-button"></button>
@@ -26,7 +26,6 @@
   </div>
  
   <script>
-    // JavaScript pour le slider
     const slider = document.querySelector('.slider');
     const sliderButtons = document.querySelectorAll('.slider-button');
     let translateValue = 0;
