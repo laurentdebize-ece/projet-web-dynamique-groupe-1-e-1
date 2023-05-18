@@ -14,8 +14,11 @@
 		<?php
 			session_start();
 		?>
-		<label> Bienvenue sur Omnes MySkills <?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></label> <br>
-		<p> Omnes MySkills est la plateforme en ligne officielle de l'ECE qui regroupe les élèves, les professeurs et les admins. Sur ce site, vous pourrez consulter vos matières et compétences à travers les différents onglets. Amusez-vous bien ! <p>
+		<label> Bienvenue sur Omnes MySkills <?php echo $_SESSION["prenom"] . ' ' . $_SESSION["nom"]; ?></label> <br><br>
+		<div class="image-container">
+    	<p class ="intro-text">Omnes MySkills est la plateforme en ligne officielle de l'ECE qui regroupe les élèves, les professeurs et les admins. <br> Sur ce site, vous pourrez consulter vos matières et compétences à travers les différents onglets. Amusez-vous bien !</p>
+    	<img src="Campus-Lyon.png" alt="Dinosaure campus" class="small-image">
+  		</div>
 	</div>
 	<?php include("footer.php"); ?>
 </body>

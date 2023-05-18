@@ -1,4 +1,11 @@
 .info {
     margin-left: 200px;
+    display: flex;
+    align-items: center;
 }
 
+.small-image {
+    width: 100px; 
+    height: auto; 
+    margin-left: 100px; 
+}

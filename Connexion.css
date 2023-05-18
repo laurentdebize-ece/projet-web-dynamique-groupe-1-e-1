@@ -1,11 +1,23 @@
+body {
+    background-image: url('ece-lyon.jpg');
+    background-size: cover;
+}
+
 #section {
 	padding: 20px;
 	width: 300px;
 	height: 300px;
-	margin: auto;
+	margin-top: 100px;
+	margin-left: 550px;
 	background-color: #1c343c;
 	position: relative;
 	font-size: 1.2em;
 	color : white;
+}
+
+#omnes {
+	color: #1c343c;
+	text-align: center;
+	font-size: 50px;
 }
 

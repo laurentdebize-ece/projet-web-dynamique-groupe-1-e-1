@@ -7,13 +7,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Connexion</title>
-	<style>
-	</style>
 </head>
 <body>
-	<div id="header">
-		<h1>Omnes MySkills</h1>
-	</div>
+	<h1 id ="omnes">Omnes MySkills</h1>
 	<div id="section">
 		<div class ="connexion">
 			<fieldset>

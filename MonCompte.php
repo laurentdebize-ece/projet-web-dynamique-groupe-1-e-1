@@ -19,6 +19,7 @@
         <label>Nom : <?php echo $_SESSION["nom"]; ?></label> <br>
 		<label>Prénom : <?php echo $_SESSION["prenom"]; ?></label> <br>
 		<label>Mail : <?php echo $_SESSION["mail"]; ?></label> <br>
+        <img src="parametre.png" alt="Image parametre" class="small-image">
     </div>
     <?php include("footer.php"); ?>
 </body>

@@ -1,3 +1,20 @@
 #intro {
     margin-left : 200px;
 }
+
+.intro-text{
+    font-size: 18px;
+}
+.image-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-container p {
+    margin-right: 10px;
+  }
+
+  .small-image {
+    width: 600px; 
+    height: auto; 
+  }
