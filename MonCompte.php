@@ -15,7 +15,7 @@
 			session_start();
 			$typeUtilisateur = $_SESSION["typeUtilisateur"];
         ?>
-        <label> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </label> <br> <br>
+        <label> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </label> <br> <br> 
         <label>Nom : <?php echo $_SESSION["nom"]; ?></label> <br>
 		<label>Prénom : <?php echo $_SESSION["prenom"]; ?></label> <br>
 		<label>Mail : <?php echo $_SESSION["mail"]; ?></label> <br>
