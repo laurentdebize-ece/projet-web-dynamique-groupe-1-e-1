@@ -14,6 +14,12 @@
         <?php
 			session_start();
 			$typeUtilisateur = $_SESSION["typeUtilisateur"];
+            if($typeUtilisateur == "admin"){
+             include("menuadmin.php"); 
+            }
+            else{
+               include("menu.php");
+            }
         ?>
         <p> Informations du compte : </p> <br> <br> <br>
         <ul>
