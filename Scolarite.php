@@ -16,7 +16,7 @@
         
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "root";
         $dbname = "Omnes MySkills";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
