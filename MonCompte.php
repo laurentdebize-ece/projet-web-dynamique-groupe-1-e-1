@@ -15,12 +15,16 @@
 			session_start();
 			$typeUtilisateur = $_SESSION["typeUtilisateur"];
         ?>
-        <label> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </label> <br> <br> 
-        <label>Nom : <?php echo $_SESSION["nom"]; ?></label> <br>
-		<label>Prénom : <?php echo $_SESSION["prenom"]; ?></label> <br>
-		<label>Mail : <?php echo $_SESSION["mail"]; ?></label> <br>
+        <p> Informations du compte : </p> <br> <br> <br>
+        <ul>
+            <li> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </li>
+            <li> Nom : <?php echo $_SESSION["nom"]; ?> </li>
+            <li>Prénom : <?php echo $_SESSION["prenom"]; ?></li> 
+            <li>Mail : <?php echo $_SESSION["mail"]; ?></li>
+        </ul>
         <img src="parametre.png" alt="Image parametre" class="small-image">
     </div>
+
     <?php include("footer.php"); ?>
 </body>
 </html>
