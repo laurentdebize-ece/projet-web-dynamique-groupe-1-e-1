@@ -1,46 +1,70 @@
 .info {
-    margin-left: 200px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .small-image {
-    width: 100px;
-    height: auto;
-    margin-left: 100px;
-  }
-  
-  .rectangle-container {
-    margin-left: 220px;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .rectangle {
-    position: relative;
-    width: 300px; /* Ajustez la largeur du rectangle selon vos besoins */
-    height: 50px; /* Ajustez la hauteur du rectangle selon vos besoins */
-    background-color: #1c343c; /* Couleur de fond du rectangle */
-    margin-bottom: 40px; /* Espace entre les rectangles */
-  }
-  
-  .rectangle p {
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: center; /* Alignement du texte au centre */
-    color: #76b5c5;
-    padding: 10px;
-    margin: 0;
-  }
-  
-  .image-carree {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px; /* Ajustez la taille de l'image carrée selon vos besoins */
-    height: 50px; /* Ajustez la taille de l'image carrée selon vos besoins */
-    background-image: url('modifier.png'); /* Chemin vers votre image */
-    background-size: cover;
-  }
-  
+  margin-left: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.small-image {
+  width: 100px;
+  height: auto;
+  margin-left: 100px;
+}
+
+.rectangle-container {
+  margin-left: 220px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rectangle {
+  position: relative;
+  width: 300px; /* Ajustez la largeur du rectangle selon vos besoins */
+  height: 50px; /* Ajustez la hauteur du rectangle selon vos besoins */
+  background-color: #1c343c; /* Couleur de fond du rectangle */
+  margin-bottom: 40px; /* Espace entre les rectangles */
+}
+
+.rectangle p {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center; /* Alignement du texte au centre */
+  color: #76b5c5;
+  padding: 10px;
+  margin: 0;
+}
+
+.image-carree {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px; /* Ajustez la taille de l'image carrée selon vos besoins */
+  height: 50px; /* Ajustez la taille de l'image carrée selon vos besoins */
+  background-image: url('modifier.png'); /* Chemin vers votre image */
+  background-size: cover;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.overlay p {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+
+

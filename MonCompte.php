@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html id="general">
+
+
 <head>
     <link rel="stylesheet" type="text/css" href="MonCompte.css">
     <link rel="stylesheet" type="text/css" href="footer.css">
@@ -8,41 +10,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mon Compte</title>
 </head>
+
+
 <body>
     <?php
-		session_start();
-		$typeUtilisateur = $_SESSION["typeUtilisateur"];
-        if($typeUtilisateur == "admin"){
-        include("menuadmin.php"); 
-        }
-        else{
-            include("menu.php");
-        }
+    session_start();
+    $typeUtilisateur = $_SESSION["typeUtilisateur"];
+    if ($typeUtilisateur == "admin") {
+        include("menuadmin.php");
+    } else {
+        include("menu.php");
+    }
     ?>
     <div class="info">
-        <p> Informations du compte : </p> <br> 
+        <p> Informations du compte : </p> <br>
         <ul>
-            <li> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </li>
-            <li> Nom : <?php echo $_SESSION["nom"]; ?> </li>
-            <li>Prénom : <?php echo $_SESSION["prenom"]; ?></li> 
-            <li>Mail : <?php echo $_SESSION["mail"]; ?></li>
+            <li> Type d'utilisateur :
+                <?php echo "$typeUtilisateur"; ?>
+            </li>
+            <li> Nom :
+                <?php echo $_SESSION["nom"]; ?>
+            </li>
+            <li>Prénom :
+                <?php echo $_SESSION["prenom"]; ?>
+            </li>
+            <li>Mail :
+                <?php echo $_SESSION["mail"]; ?>
+            </li>
         </ul>
         <img src="parametre.png" alt="Image parametre" class="small-image">
     </div>
-    
-    
-    <div class="rectangle-container">
-      <div class="rectangle">
-        <p>Changer le mot de passe </p>
-        <div class="image-carree"></div>
-      </div>
-      <div class="rectangle">
-        <p>Changer l'adresse mail</p>
-        <div class="image-carree"></div>
-      </div>
-    </div>
-
     <?php include("footer.php"); ?>
 
+
+
+
+    <div class="rectangle-container">
+        <div class="rectangle">
+            <p>Changer le mot de passe </p>
+            <div class="image-carree"></div>
+        </div>
+        <div class="rectangle">
+            <p>Changer l'adresse mail</p>
+            <div class="image-carree"></div>
+        </div>
+    </div>
+
+
+ <?php
+ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Inclusion des fichiers
+    include 'fichier1.php';
+    include 'fichier2.php';
+   
+    // Contenu de fichier1.php
+    // ...
+   
+    // Contenu de fichier2.php
+    // ...
+   
+    // Fermeture des fichiers ouverts
+    fclose($fichier1);
+    fclose($fichier2);
+}
+?>
+
+
 </body>
+
+
 </html>
