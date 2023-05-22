@@ -29,6 +29,20 @@
         </ul>
         <img src="parametre.png" alt="Image parametre" class="small-image">
     </div>
+    
+    
+    <div class="rectangle-container">
+      <div class="rectangle">
+        <p>Changer le mot de passe </p>
+        <div class="image-carree"></div>
+      </div>
+      <div class="rectangle">
+        <p>Changer l'adresse mail</p>
+        <div class="image-carree"></div>
+      </div>
+    </div>
+
     <?php include("footer.php"); ?>
+
 </body>
 </html>
