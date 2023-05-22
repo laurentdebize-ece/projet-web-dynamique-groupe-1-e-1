@@ -13,21 +13,36 @@
 		session_start();
 		$typeUtilisateur = $_SESSION["typeUtilisateur"];
         if($typeUtilisateur == "admin"){
-             include("menuadmin.php"); 
+        include("menuadmin.php"); 
         }
         else{
-             include("menu.php");
+            include("menu.php");
         }
     ?>
-	
-     <div class="info">
-        
-        <label> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </label> <br> <br> 
-        <label>Nom : <?php echo $_SESSION["nom"]; ?></label> <br>
-		<label>Prénom : <?php echo $_SESSION["prenom"]; ?></label> <br>
-		<label>Mail : <?php echo $_SESSION["mail"]; ?></label> <br>
+    <div class="info">
+        <p> Informations du compte : </p> <br> 
+        <ul>
+            <li> Type d'utilisateur : <?php echo "$typeUtilisateur";?> </li>
+            <li> Nom : <?php echo $_SESSION["nom"]; ?> </li>
+            <li>Prénom : <?php echo $_SESSION["prenom"]; ?></li> 
+            <li>Mail : <?php echo $_SESSION["mail"]; ?></li>
+        </ul>
         <img src="parametre.png" alt="Image parametre" class="small-image">
     </div>
+    
+    
+    <div class="rectangle-container">
+      <div class="rectangle">
+        <p>Changer le mot de passe </p>
+        <div class="image-carree"></div>
+      </div>
+      <div class="rectangle">
+        <p>Changer l'adresse mail</p>
+        <div class="image-carree"></div>
+      </div>
+    </div>
+
     <?php include("footer.php"); ?>
+
 </body>
 </html>
