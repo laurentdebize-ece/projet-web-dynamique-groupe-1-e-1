@@ -9,16 +9,14 @@
 	<title>Connexion</title>
 </head>
 <body>
-	<div id="header">
-		<h1>Omnes MySkills</h1>
-	</div>
+	<h1 id ="omnes">Omnes MySkills</h1>
 	<div id="section">
 		<div class ="connexion">
 			<fieldset>
 			<legend>Connexion</legend><br>
 			<form action="login.php" method="post">
-				Email : <br><input type="text" name="email"> <br><br>
-				Mot de passe :<br><input type="password" name="pass" id="pass"><br><br>
+				Email : <br><input type="text" name="email" maxlength="30" size="30"> <br><br>
+				Mot de passe :<br><input type="password" name="pass" id="pass" maxlength="30" size="30"><br><br>
 				<input type="submit" name="submit" value="Envoyer"><br><br><br><br>
 			</form>
 			</fieldset>
