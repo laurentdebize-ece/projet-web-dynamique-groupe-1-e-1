@@ -1,6 +1,6 @@
 <div id="nav">
     <div><a href = "Scolarite.php">Scolarite</a></div>
-    <div> <a href ="Modification.php">Modification</a></div>
+    <div><a href ="Modification.php">Modification</a></div>
     <div> <a href ="MonCompte.php">Mon compte</a></div>
     <div><a href ="Connexion.php">Deconnexion</a></div>
 </div>

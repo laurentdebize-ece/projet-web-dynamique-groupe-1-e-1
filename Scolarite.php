@@ -7,6 +7,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scolarite</title>
+
+<script>
+
+const addStudentForm = document.getElementById('addStudentForm');
+
+
+addStudentForm.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+    
+   
+    const studentName = document.getElementById('studentName').value;
+    const studentFirstName = document.getElementById('studentFirstName').value;
+
+  
+    addStudentForm.reset();
+});
+
+</script>
+
 </head>
 <body>
     <?php include("menuadmin.php"); ?>
@@ -62,6 +81,17 @@
             </table>
         </div>
 
+        
+<form id="addStudentForm" class="add-form" style="display: none;">
+    <label for="studentName">Nom de l'étudiant :</label>
+    <input type="text" id="studentName" name="studentName" required>
+
+    <label for="studentFirstName">Prénom de l'étudiant :</label>
+    <input type="text" id="studentFirstName" name="studentFirstName" required>
+
+    <button type="submit">Ajouter</button>
+</form>
+
         <div>
             <h2>Professeurs</h2>
             <table>
@@ -86,6 +116,18 @@
             </table>
         </div>
 
+        <form id="addProfessorForm" class="add-form" style="display: none;">
+    <label for="professorName">Nom du professeur :</label>
+    <input type="text" id="professorName" name="professorName" required>
+
+    <label for="professorFirstName">Prénom du professeur :</label>
+    <input type="text" id="professorFirstName" name="professorFirstName" required>
+
+
+  
+    <button type="submit">Ajouter</button>
+</form>
+
         <div>
             <h2>Matières</h2>
             <table>
@@ -106,8 +148,19 @@
                 ?>
             </table>
         </div>
-        
+       
+       
+<form id="addSubjectForm" class="add-form" style="display: none;">
+    <label for="subjectName">Nom de la matière :</label>
+    <input type="text" id="subjectName" name="subjectName" required>
+
+   
+    <button type="submit">Ajouter</button>
+</form>
+
     </div>
+
+
 
     <?php include("footer.php"); ?>
 </body>
