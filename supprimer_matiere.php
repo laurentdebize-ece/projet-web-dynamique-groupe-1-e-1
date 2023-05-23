@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html id="general">
 
+
 <?php
 $servername = "localhost";
 $username = "root";
@@ -12,28 +13,23 @@ if ($conn->connect_error) {
     die("Échec de la connexion à la base de données : " . $conn->connect_error);
 }
 
-
+// Récupérer les valeurs du formulaire
 $nom = $_POST['Nom'];
 $volumehoraire = $_POST['VolumeHoraire'];
 
-if (isset($_POST["Ajouter"])) {
 
-    
-$query = "INSERT INTO Matieres (Nom, VolumeHoraire) VALUES ('$nom', '$volumehoraire')";
+// Effectuer la requête de suppression
+$query = "DELETE FROM Matieres WHERE Nom = '$nom' AND VolumeHoraire = '$volumehoraire'";
 $result = $conn->query($query);
 
-
+// Vérifier si la suppression a réussi
 if ($result === TRUE) {
-    echo "Matiere ajoutée avec succès à la base de données.";
+    echo "Matiere supprimée avec succès de la base de données.";
 } else {
-    echo "Erreur lors de l'ajout de la matiere : " . $conn->error;
+    echo "Erreur lors de la suppression de la matiere : " . $conn->error;
 }
 
-}
-
-
-
+// Fermer la connexion à la base de données
 $conn->close();
 ?>
-
 </html>
