@@ -12,26 +12,39 @@ if ($conn->connect_error) {
     die("Échec de la connexion à la base de données : " . $conn->connect_error);
 }
 
-// Récupérer les valeurs du formulaire
 $nom = $_POST['Nom'];
 $prenom = $_POST['Prenom'];
 $email = $_POST['Mail'];
 $mot_de_passe = $_POST['MotDePasse'];
 
 
-// Effectuer la requête d'insertion
+if (isset($_POST["Ajouter"])){
+
 $query = "INSERT INTO Professeurs (Nom, Prenom, Mail, MotDePasse) VALUES ('$nom', '$prenom', '$email', '$mot_de_passe')";
 $result = $conn->query($query);
 
-// Vérifier si l'insertion a réussi
 if ($result === TRUE) {
     echo "Professeur ajouté avec succès à la base de données.";
 } else {
     echo "Erreur lors de l'ajout du professeur : " . $conn->error;
 }
+}
 
-// Fermer la connexion à la base de données
+if (isset($_POST["Supprimer"])){
+
+    $query = "DELETE FROM Etudiants WHERE Nom = '$nom' AND Prenom = '$prenom'AND Mail='$email' AND MotDePasse = '$mot_de_passe' AND IdClasse = '$IdClasse'";
+    $result = $conn->query($query);
+
+if ($result === TRUE) {
+    echo "Professeur supprimé avec succès de la base de données.";
+} else {
+    echo "Erreur lors de la suppression du professeur : " . $conn->error;
+}
+}
+
+
 $conn->close();
 ?>
 
 </html>
+

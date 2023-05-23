@@ -13,6 +13,7 @@
 
     <div class ="formulaire">
     <h2>Ajout d'un étudiant</h2>
+    
     <form action="ajouter_etudiant.php" method="POST">
     <label for="Nom">Nom :</label>
         <input type="text" id="Nom" name="Nom" required>
@@ -29,8 +30,8 @@
         <label for="IdClasse">Classe :</label>
         <input type="text" id="IdClasse" name="IdClasse" required>
 
-        <input type="submit" value="Ajouter">
-        <input type="submit" value="Supprimer">
+        <input type="submit" name="Ajouter" value="Ajouter">
+        <input type="submit" name ="Supprimer" value="Supprimer">
     </form>
 
     <h2>Ajout d'un professeur</h2>
@@ -47,20 +48,21 @@
         <label for="MotDePasse">Mot de passe :</label>
         <input type="password" id="MotDePasse" name="MotDePasse" required>
         
-        <input type="submit" value="Ajouter">
-        <input type="submit" value="Supprimer">
+        <input type="submit" name="Ajouter" value="Ajouter">
+        <input type="submit" name="Supprimer" value="Supprimer">
     </form>
 
     <h2>Ajout d'une matière</h2>
     <form action="ajouter_matiere.php" method="POST">
+    
         <label for="Nom">Nom :</label>
         <input type="text" id="Nom" name="Nom" required>
 
         <label for="VolumeHoraire">Volume horaire :</label>
         <input type="text" id="VolumeHoraire" name="VolumeHoraire" required>
 
-        <input type="submit" value="Ajouter">
-        <input type="submit" value="Supprimer">
+        <input type="submit" name="Ajouter" value="Ajouter">
+        <input type="submit" name="Supprimer" value="Supprimer">
     </form>
     </div>
 
