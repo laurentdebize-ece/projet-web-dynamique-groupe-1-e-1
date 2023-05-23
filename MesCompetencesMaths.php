@@ -24,7 +24,6 @@
 			</thead>
 			<tbody>
 				<?php
-				// Connexion à la base de données
 				$servername = "localhost";
 				$username = "root";
 				$password = "root";
@@ -32,27 +31,31 @@
 
 				$conn = new mysqli($servername, $username, $password, $dbname);
 
-				// Vérifier la connexion
+				session_start();
 				if ($conn->connect_error) {
 					die("Échec de la connexion : " . $conn->connect_error);
 				}
 
-				// Requête SQL pour récupérer les compétences triées par matière
-				$sql = "SELECT Competences.Nom, Matieres.Nom AS MatiereNom
-                    FROM Competences
-                    INNER JOIN Matieres ON Competences.IdMatiere = Matieres.IdMatieres
-                    WHERE Matieres.Nom = 'Mathématiques'
-                    ORDER BY Matieres.Nom ASC";
+				$sql = "SELECT Competences.Nom, Matieres.Nom AS MatiereNom, Niveau.Etat AS Eval, Evaluations.IdEtudiant AS Id
+                    			FROM Competences
+                    			INNER JOIN Matieres ON Competences.IdMatiere = Matieres.IdMatieres
+					INNER JOIN Evaluations on Evaluations.IdCompetences = Competences.IdCompetences
+					INNER JOIN Niveau ON Niveau.IdNiveau = Evaluations.IdNiveau
+					INNER JOIN Etudiants on Etudiants.IdEtudiant = Evaluations.IdEtudiant
+					WHERE Matieres.Nom = 'Mathématiques'
+                    			ORDER BY Matieres.Nom ASC";
 
 				$result = $conn->query($sql);
 
 				if ($result->num_rows > 0) {
 					while ($row = $result->fetch_assoc()) {
+						if($_SESSION["id_etudiant"]==$row["Id"]){
 						echo "<tr>";
 						echo "<td>" . $row["Nom"] . "</td>";
 						echo "<td>" . $row["MatiereNom"] . "</td>";
-						echo "<td>","Non évalué","</td>";
+						echo "<td>" . $row["Eval"] . "</td>";
 						echo "</tr>";
+						}
 					}
 				} else {
 					echo "<tr><td colspan='2'>Aucune compétence trouvée</td></tr>";
