@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["mail"] = $row["Mail"];
         $_SESSION["id_classe"] = $row["IdClasse"];
         $_SESSION["typeUtilisateur"] = "étudiant";
+        $_SESSION["matiere"] = 0;
 
         header("Location: Accueil.php");
         exit();
