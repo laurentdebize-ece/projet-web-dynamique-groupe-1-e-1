@@ -1,0 +1,21 @@
+table {
+    width: 80%;
+    margin: 0 auto; /* Centre le tableau horizontalement */
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2; /* Couleur de fond de l'en-tête */
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Couleur de fond des lignes paires */
+  }
+.container {
+    margin-left : 200px;
+}  

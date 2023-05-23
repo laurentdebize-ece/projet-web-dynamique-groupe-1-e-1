@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="Scolarite.css">
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" type="text/css" href="menu.css">
-    <script src="Scolarite.js"></script>
+    <script type = "text/javascript" src="Scolarite.js"></script>
     <meta charset="utf-8">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
