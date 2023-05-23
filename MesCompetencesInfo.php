@@ -39,9 +39,10 @@
 
 				// Requête SQL pour récupérer les compétences triées par matière
 				$sql = "SELECT Competences.Nom, Matieres.Nom AS MatiereNom
-						FROM Competences
-						INNER JOIN Matieres ON Competences.IdMatiere = Matieres.IdMatieres
-						ORDER BY Matieres.Nom ASC";
+					FROM Competences
+					INNER JOIN Matieres ON Competences.IdMatiere = Matieres.IdMatieres
+					WHERE Matieres.Nom = 'Informatique'
+					ORDER BY Matieres.Nom ASC";
 
 				$result = $conn->query($sql);
 
