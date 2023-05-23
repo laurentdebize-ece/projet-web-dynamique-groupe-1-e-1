@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <title>Mon Compte</title>
+
 </head>
 
 <body>
@@ -21,6 +22,9 @@
     include("menu.php");
   }
   ?>
+
+  <?php include("footer.php"); ?>
+
   <div class="info">
     <p> Informations du compte : </p> <br>
     <ul>
@@ -39,18 +43,52 @@
     </ul>
     <img src="parametre.png" alt="Image parametre" class="small-image">
   </div>
-  <?php include("footer.php"); ?>
+  
+  
   <div class="rectangle-container">
-    <div class="rectangle">
-      <p>Changer le mot de passe </p>
+    <div class="rectangle" id="rectangle1">
+      <p>Changer le mot de passe</p>
       <div class="image-carree"></div>
     </div>
-    <div class="rectangle 2">
+    <div class="rectangle" id="rectangle2">
       <p>Changer l'adresse mail</p>
       <div class="image-carree"></div>
     </div>
   </div>
+  
 
+  <div id="password-form">
+  <form method="post">
+    <input type="password" name="new-password" placeholder="Nouveau mot de passe" required><br>
+    <input type="password" name="confirm-password" placeholder="Confirmer le mot de passe" required><br>
+    <input type="submit" value="Changer le mot de passe">
+  </form>
+</div>
+
+<div id="email-form">
+  <form method="post">
+    <input type="email" name="new-email" placeholder="Nouvelle adresse email" required><br>
+    <input type="email" name="confirm-email" placeholder="Confirmer l'adresse email" required><br>
+    <input type="submit" value="Changer l'adresse email">
+  </form>
+</div>
+
+
+<script>
+  $(document).ready(function() {
+    $("#rectangle1").click(function() {
+      $(".rectangle").hide();
+      $("#password-form").show();
+    });
+    $("#rectangle2").click(function() {
+      $(".rectangle").hide();
+      $("#email-form").show();
+    });
+  });
+</script>
+
+
+<div class="info">
   <?php
   // Connexion à la base de données
   $servername = "localhost";
@@ -63,26 +101,112 @@
     die("Connexion échouée : " . $conn->connect_error);
   }
 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $newPassword = $_POST["password"];
-    $confirmedPassword = $_POST["confirm-password"];
+  if ($_SESSION["typeUtilisateur"] == "étudiant") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new-password"])) {
+      $newPassword = $_POST["new-password"];
+      $confirmedPassword = $_POST["confirm-password"];
 
- 
-    if ($newPassword == $confirmedPassword) {
-      
-      $sql = "UPDATE nom_table SET MotDePasse = '$newPassword' WHERE IdEtudiant =  '$_SESSION[id_etudiant]'";
-      if ($conn->query($sql) === TRUE) {
-        echo "Mot de passe mis à jour avec succès !";
+      if ($newPassword == $confirmedPassword) {
+        $sql = "UPDATE etudiants SET MotDePasse = '$newPassword' WHERE IdEtudiant =  '$_SESSION[id_etudiant]'";
+        if ($conn->query($sql) === TRUE) {
+          echo "Mot de passe mis à jour avec succès !";
+        } else {
+          echo "Erreur lors de la mise à jour du mot de passe : " . $conn->error;
+        }
       } else {
-        echo "Erreur lors de la mise à jour du mot de passe : " . $conn->error;
+        echo "Les mots de passe ne correspondent pas !";
       }
-    } else {
-      echo "Les mots de passe ne correspondent pas !";
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new-email"])) {
+      $newEmail = $_POST["new-email"];
+      $confirmedEmail = $_POST["confirm-email"];
+
+      if ($newEmail == $confirmedEmail) {
+        // Effectuer les actions nécessaires pour mettre à jour l'adresse email dans la base de données
+        $sql = "UPDATE etudiants SET Mail = '$newEmail' WHERE IdEtudiant = '$_SESSION[id_etudiant]'";
+        if ($conn->query($sql) === TRUE) {
+          echo "Adresse email mise à jour avec succès !";
+        } else {
+          echo "Erreur lors de la mise à jour de l'adresse email : " . $conn->error;
+        }
+      } else {
+        echo "Les adresses email ne correspondent pas !";
+      }
+    }
+  } elseif ($_SESSION["typeUtilisateur"] == "admin") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new-password"])) {
+      $newPassword = $_POST["new-password"];
+      $confirmedPassword = $_POST["confirm-password"];
+
+      if ($newPassword == $confirmedPassword) {
+        $sql = "UPDATE admin SET MotDePasse = '$newPassword' WHERE IdAdmin =  '$_SESSION[id_admin]'";
+        if ($conn->query($sql) === TRUE) {
+          echo "Mot de passe mis à jour avec succès !";
+        } else {
+          echo "Erreur lors de la mise à jour du mot de passe : " . $conn->error;
+        }
+      } else {
+        echo "Les mots de passe ne correspondent pas !";
+      }
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new-email"])) {
+      $newEmail = $_POST["new-email"];
+      $confirmedEmail = $_POST["confirm-email"];
+
+      if ($newEmail == $confirmedEmail) {
+        // Effectuer les actions nécessaires pour mettre à jour l'adresse email dans la base de données
+        $sql = "UPDATE admin SET Mail = '$newEmail' WHERE IdAdmin = '$_SESSION[id_admin]'";
+        if ($conn->query($sql) === TRUE) {
+          echo "Adresse email mise à jour avec succès !";
+        } else {
+          echo "Erreur lors de la mise à jour de l'adresse email : " . $conn->error;
+        }
+      } else {
+        echo "Les adresses email ne correspondent pas !";
+      }
+    }
+  } elseif ($_SESSION["typeUtilisateur"] == "professeur") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new-password"])) {
+      $newPassword = $_POST["new-password"];
+      $confirmedPassword = $_POST["confirm-password"];
+
+      if ($newPassword == $confirmedPassword) {
+        $sql = "UPDATE professeurs SET MotDePasse = '$newPassword' WHERE IdProfesseur =  '$_SESSION[id_professeur]'";
+        if ($conn->query($sql) === TRUE) {
+          echo "Mot de passe mis à jour avec succès !";
+        } else {
+          echo "Erreur lors de la mise à jour du mot de passe : " . $conn->error;
+        }
+      } else {
+        echo "Les mots de passe ne correspondent pas !";
+      }
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["new-email"])) {
+      $newEmail = $_POST["new-email"];
+      $confirmedEmail = $_POST["confirm-email"];
+
+      if ($newEmail == $confirmedEmail) {
+        // Effectuer les actions nécessaires pour mettre à jour l'adresse email dans la base de données
+        $sql = "UPDATE professeurs SET Mail = '$newEmail' WHERE IdProfesseur = '$_SESSION[id_professeur]'";
+        if ($conn->query($sql) === TRUE) {
+          echo "Adresse email mise à jour avec succès !";
+        } else {
+          echo "Erreur lors de la mise à jour de l'adresse email : " . $conn->error;
+        }
+      } else {
+        echo "Les adresses email ne correspondent pas !";
+      }
     }
   }
 
   $conn->close();
   ?>
+</div>
+
+
 </body>
 
 </html>
