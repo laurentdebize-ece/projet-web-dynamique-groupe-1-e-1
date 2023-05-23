@@ -57,6 +57,7 @@
 							echo "<td>" . $row["Eval"] . "</td>";
 							echo "</tr>";
 						}
+					}
 				} else {
 					echo "<tr><td colspan='2'>Aucune compétence trouvée</td></tr>";
 				}
