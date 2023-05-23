@@ -4,17 +4,13 @@
     <link rel="stylesheet" type="text/css" href="Scolarite.css">
     <link rel="stylesheet" type="text/css" href="footer.css">
     <link rel="stylesheet" type="text/css" href="menu.css">
-    <script type = "text/javascript" src="Scolarite.js"></script>
     <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Scolarite</title>
 
-    <script>
+<script>
 
-        
 const addStudentForm = document.getElementById('addStudentForm');
-
 
 
 addStudentForm.addEventListener('submit', function(event) {
@@ -38,7 +34,7 @@ addStudentForm.addEventListener('submit', function(event) {
         
         $servername = "localhost";
         $username = "root";
-        $password = "";
+        $password = "root";
         $dbname = "Omnes MySkills";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -47,15 +43,15 @@ addStudentForm.addEventListener('submit', function(event) {
         }
 
         // étudiants
-        $query_etudiants = "SELECT Nom, Prenom FROM Etudiants";
+        $query_etudiants = "SELECT Nom, Prenom, Mail FROM Etudiants";
         $result_etudiants = $conn->query($query_etudiants);
 
         // professeurs
-        $query_professeurs = "SELECT Nom, Prenom FROM Professeurs";
+        $query_professeurs = "SELECT Nom, Prenom, Mail FROM Professeurs";
         $result_professeurs = $conn->query($query_professeurs);
 
         // matières
-        $query_matieres = "SELECT Nom FROM Matieres";
+        $query_matieres = "SELECT Nom, VolumeHoraire FROM Matieres";
         $result_matieres = $conn->query($query_matieres);
 
         $conn->close();
@@ -63,14 +59,11 @@ addStudentForm.addEventListener('submit', function(event) {
 
         <div>
             <h2>Etudiants</h2>
-            <button onclick="addStudent()">
-                <img src="ajouter.png" alt="Ajouter">
-            </button>
             <table>
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <th>Action</th>
+                    <th>Mail</th>
                 </tr>
                 <?php
                 if ($result_etudiants->num_rows > 0) {
@@ -78,10 +71,7 @@ addStudentForm.addEventListener('submit', function(event) {
                         echo "<tr>";
                         echo "<td>" . $row["Nom"] . "</td>";
                         echo "<td>" . $row["Prenom"] . "</td>";
-                        echo "<td>";
-                        echo "<img src='modifier.png' alt='Modifier' onclick='editStudent()'>";
-                        echo "<img src='supprimer.png' alt='Supprimer' onclick='deleteStudent()'>";
-                        echo "</td>";
+                        echo "<td>" . $row["Mail"] . "</td>";
                         echo "</tr>";
                     }
                 } else {
@@ -104,14 +94,11 @@ addStudentForm.addEventListener('submit', function(event) {
 
         <div>
             <h2>Professeurs</h2>
-            <button onclick="addProfessor()">
-                <img src="ajouter.png" alt="Ajouter">
-            </button>
             <table>
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
-                    <th>Action</th>
+                    <th>Mail</th>
                 </tr>
                 <?php
                 if ($result_professeurs->num_rows > 0) {
@@ -119,10 +106,7 @@ addStudentForm.addEventListener('submit', function(event) {
                         echo "<tr>";
                         echo "<td>" . $row["Nom"] . "</td>";
                         echo "<td>" . $row["Prenom"] . "</td>";
-                        echo "<td>";
-                        echo "<img src='modifier.png' alt='Modifier' onclick='editProfessor()'>";
-                        echo "<img src='supprimer.png' alt='Supprimer' onclick='deleteProfessor()'>";
-                        echo "</td>";
+                        echo "<td>" . $row["Mail"] . "</td>";
                         echo "</tr>";
                     }
                 } else {
@@ -146,24 +130,17 @@ addStudentForm.addEventListener('submit', function(event) {
 
         <div>
             <h2>Matières</h2>
-            <button onclick="addSubject()">
-                <img src="ajouter.png" alt="Ajouter">
-            </button>
             <table>
                 <tr>
                     <th>Nom</th>
-                    <th>Action</th>
+                    <th>Volume Horaire</th>
                 </tr>
                 <?php
                 if ($result_matieres->num_rows > 0) {
                     while ($row = $result_matieres->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . $row["Nom"] . "</td>";
-                        echo "<td>";
-                        echo "<img src='modifier.png' alt='Modifier' onclick='editSubject()'>";
-                        echo "<img src='supprimer.png' alt='Supprimer' onclick='deleteSubject()'>";
-                        echo "</td>";
-                        echo "</tr>";
+                        echo "<td>" . $row["VolumeHoraire"] . "</td>";
                     }
                 } else {
                     echo "<tr><td colspan='2'>Aucune matière trouvée</td></tr>";

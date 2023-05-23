@@ -49,9 +49,6 @@
       });
     });
   </script>
-  <br> 
-  <div id ="lienComp">
-    <a href = "MesCompetences.php"> Accéder à mes Compétences </a>
-  </div>
+  
 </body>
 </html>
