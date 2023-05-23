@@ -1,46 +1,95 @@
 .info {
-    margin-left: 200px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .small-image {
-    width: 100px;
-    height: auto;
-    margin-left: 100px;
-  }
-  
-  .rectangle-container {
-    margin-left: 220px;
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .rectangle {
-    position: relative;
-    width: 300px; /* Ajustez la largeur du rectangle selon vos besoins */
-    height: 50px; /* Ajustez la hauteur du rectangle selon vos besoins */
-    background-color: #1c343c; /* Couleur de fond du rectangle */
-    margin-bottom: 40px; /* Espace entre les rectangles */
-  }
-  
-  .rectangle p {
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: center; /* Alignement du texte au centre */
-    color: #76b5c5;
-    padding: 10px;
-    margin: 0;
-  }
-  
-  .image-carree {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50px; /* Ajustez la taille de l'image carrée selon vos besoins */
-    height: 50px; /* Ajustez la taille de l'image carrée selon vos besoins */
-    background-image: url('modifier.png'); /* Chemin vers votre image */
-    background-size: cover;
-  }
-  
+  margin-left: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.small-image {
+  width: 100px;
+  height: auto;
+  margin-left: 100px;
+}
+
+.rectangle-container {
+  margin-left: 220px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rectangle {
+  position: relative;
+  width: 300px;
+  height: 50px;
+  background-color: #1c343c;
+  margin-bottom: 40px;
+}
+
+.rectangle p {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  color: #76b5c5;
+  padding: 10px;
+  margin: 0;
+}
+
+.image-carree {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  /* Ajustez la taille de l'image carrée selon vos besoins */
+  height: 50px;
+  /* Ajustez la taille de l'image carrée selon vos besoins */
+  background-image: url('modifier.png');
+  /* Chemin vers votre image */
+  background-size: cover;
+}
+
+
+.rectangle-container {
+  display: flex;
+}
+
+.rectangle {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.password-form.hidden {
+  display: none;
+}
+
+
+#password-form {
+  display: none;
+  text-align: center;
+  margin-left: 200px;
+}
+
+#password-form form {
+  display: inline-block;
+}
+
+#password-form input[type="password"],
+#password-form input[type="submit"] {
+  margin-bottom: 10px;
+}
+
+#email-form {
+  display: none;
+  text-align: center;
+}
+
+#email-form form {
+  display: inline-block;
+}
+
+#email-form input[type="email"],
+#email-form input[type="submit"] {
+  margin-bottom: 10px;
+}

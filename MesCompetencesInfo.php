@@ -38,13 +38,13 @@
 				}
 
 				$sql = "SELECT Competences.Nom, Matieres.Nom AS MatiereNom, Niveau.Etat AS Eval, Evaluations.IdEtudiant AS Id
-                    			FROM Competences
-                    			INNER JOIN Matieres ON Competences.IdMatiere = Matieres.IdMatieres
+                    FROM Competences
+                    INNER JOIN Matieres ON Competences.IdMatiere = Matieres.IdMatieres
 					INNER JOIN Evaluations on Evaluations.IdCompetences = Competences.IdCompetences
 					INNER JOIN Niveau ON Niveau.IdNiveau = Evaluations.IdNiveau
 					INNER JOIN Etudiants on Etudiants.IdEtudiant = Evaluations.IdEtudiant
 					WHERE Matieres.Nom = 'Informatique'
-                    			ORDER BY Matieres.Nom ASC";
+                    ORDER BY Matieres.Nom ASC";
 
 				$result = $conn->query($sql);
 
